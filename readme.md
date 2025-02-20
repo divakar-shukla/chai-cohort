@@ -19,6 +19,6 @@ This repository is a personal record of my learning journey through the **Web De
   - A folder for each topic covered during that week.
   - Files include both class materials .
   - A `notes.pdf` summarizing the key points from each topic.
-  - assignment 
+  - assignment A
 
 Feel free to explore the code, notes, and assignments!
