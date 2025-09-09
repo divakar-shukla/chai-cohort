@@ -35,3 +35,20 @@
 **Editorial:** `Map` preserves insertion order.
 
 ---
+
+## 4. LRU (Least Recently Used) Cache Simulation
+
+**Problem:**  
+Implement a cache system with a given capacity using `Map`. When capacity is exceeded, remove the least recently used item.
+
+**Example:**
+
+```js
+put(1, 1)
+put(2, 2)
+get(1) → 1
+put(3, 3) // removes key 2
+get(2) → -1
+
+---
+```

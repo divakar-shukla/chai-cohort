@@ -50,4 +50,44 @@ function findFirstUniqueChar(word) {
   }
 }
 
-console.log(findFirstUniqueChar("swiss"));
+// console.log(findFirstUniqueChar("swiss"));
+
+// problem 4
+
+class LRUCache {
+  constructor(capicity) {
+    this.capicity = capicity;
+    this.store = new Map();
+  }
+
+  get(key) {
+    if (!this.store.has(key)) return -1;
+    let value = this.store.get(key);
+    this.store.delete(key);
+    this.store.set(key, value);
+    return value;
+  }
+  put(key, value) {
+    if (this.store.has(key)) {
+      this.store.delete(key);
+    }
+    this.store.set(key, value);
+
+    if (this.capicity < this.store.size) {
+      let firstKey = this.store.keys().next().value;
+      this.store.delete(firstKey);
+    }
+  }
+}
+
+let myCache = new LRUCache(4);
+
+myCache.put("Divakar", ["music", "coding"]);
+myCache.put("aman", ["math", "agri"]);
+myCache.put("niraj", ["Dance", "drive"]);
+myCache.put("Rohit", ["Horse Riding", "Management"]);
+myCache.put("Mohit", ["Acting", "Teaching"]);
+myCache.put("Divakar", ["music", "coding"]);
+myCache.get("niraj");
+
+console.log(myCache);
